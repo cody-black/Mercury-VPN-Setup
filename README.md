@@ -10,7 +10,7 @@ Tujuan koleksi ini agar semua orang, termasuk yang awam, dapat membuat sendiri V
 
 # Guides list
 
-* Google Compute Engine [English](./GCEEnglish.md)/[Indonesia](./GCEIndonesia.md)
+* Google Compute Engine [English](./guides/GCEEnglish.md)/[Indonesia](./guides/GCEIndonesia.md)
   * Worldwide server free for one year, free one US server with 1 GB monthly bandwidth afterwards
   * Gratis untuk satu tahun dengan semua server, gratis satu server di AS dengan bandwidth 1 GB per bulan setelahnya
 
