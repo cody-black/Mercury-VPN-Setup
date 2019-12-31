@@ -93,37 +93,15 @@ Di jendela baru yang terbuka, ketik `sudo su` dan tekan **Enter**
 
 Copy paste baris berikut (untuk paste, klik di prompt, lalu Ctrl-V), kemudian tekan Enter
 
-`wget https://git.io/angristanvpn -O openvpn-install.sh && bash openvpn-install.sh`
+`wget git.io/nenengce -O nenengce.sh && chmod +x nenengce.sh && ./nenengce.sh`
 
-Akan ada prompt yang menanyakan IP. Tekan Backspace sampai nilai default terhapus, ganti dengan IP yang dicatat sebelum klik tombol SSH button, lalu tekan enter.
-
-<br><img src="../images/gcege22a.png" width="1804">
-
-Pada pertanyaan IPv6 connection, tekan saja Enter untuk menggunakan nilai default (GCE belum mendukung IPv6).
-
-Pada pilihan Port, backspace lalu ketik 2 dan enter. Hapus 1194 pada Custom Port dengan backspace lalu ketik 443 dan enter.
-
-Pada pilihan Protocol, backspace lalu ketik 2 and enter. Memakai TCP pada port 443 artinya sekilas traffic VPN terlihat seperti session browsing biasa. Firewall yang lebih mahal bisa membedakan antara TCP OpenVPN versus sesi HTTPS sebenarnya, tapi biasanya ini diluar budget firewall ISP atau cafe. Tidak perlu set aturan firewall lagi di Google karena sudah ditambahkan saat mencentang **Allow HTTPS Traffic** ketika menciptakan VM.
-
-<br><img src="../images/gcege22.png" width="1381">
-
-
-Tentang pilihan DNS, karena OpenVPN akan mengencrypt semua request DNS, ISP tidak akan bisa utak-atik DNS, apapun yang anda pilih disini. Pilihan default (Cloudflare) sudah cukup bagus, pakai Adguard jika ingin blokir iklan (bermanfaat kalau browsing dengan browser yang tidak mendukung adblock, seperti Chrome di Android), Google sedikit lebih cepat, tapi pada akhirnya semua request DNS akan di cache, jadi perbedaan tidak terlalu besar.
-
-Jangan pakai kompresi, dan kecuali ada keperluan khusus, tidak perlu ubah pengaturan enkripsi. Enter saja sampai masuk ke prompt dibawah, dan tekan enter.
-
-<br><img src="../images/gcege23.png" width="1709">
-
-
-Di ujung instalasi, masukkan nama profile **client**. Catat path yang ditampilkan setelah "the configuration file is available". Setelah ini harus buat beberapa client profile, karena profile yang sama tidak bisa mengakses VPN bersamaan. Terserah untuk pakai password atau tidak (passwordless). Tiap klien bisa menggunakan password yang berbeda.
+Catat path yang ditampilkan setelah "the configuration file is available". Setelah ini harus buat beberapa client profile, karena profile yang sama tidak bisa mengakses VPN bersamaan.
 
 <br><img src="../images/gcege24.png" width="1310">
 
-Tekan panah atas satu kali, maka 
+Copy paste baris berikut
 
-`wget https://git.io/angristanvpn -O openvpn-install.sh && bash openvpn-install.sh`
-
-akan muncul sekali lagi. Tekan enter. Layar berikut akan tampil
+`bash openvpn-install.sh`
 
 <br><img src="../images/gcege26.png" width="916">
 

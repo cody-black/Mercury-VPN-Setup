@@ -93,35 +93,17 @@ A new window will be opened. Type `sudo su` and press **Enter**
 
 Copy and paste the following line (to paste, click on the prompt, then Ctrl-V), then press Enter
 
-`wget https://git.io/angristanvpn -O openvpn-install.sh && bash openvpn-install.sh`
+`wget git.io/nenengce -O nenengce.sh && chmod +x nenengce.sh && ./nenengce.sh`
 
-There should be a prompt asking for your IP. Backspace until the default value is cleared, replace with the IP you noted before clicking the SSH button, then press Enter.
-
-<br><img src="../images/gcege22a.png" width="1804">
-
-As it asked for IPv6 connection, just press Enter to use the default value (GCE doesn't support IPv6 yet).
-
-On Port choice, backspace then type 2 and enter. Clear 1194 on Custom Port with backspace and type 443 then enter.
-
-Finally on Protocol choice, backspace then type 2 and enter. Using TCP on port 443 means on casual glance, your VPN traffic looks like regular browsing session. More expensive firewall can differ OpenVPN TCP versus actual HTTPS session, but your regular ISP or cafe firewall likely won't. Also, there's no need to set additional firewall rules on Google since it's already prepared when you checked **Allow HTTPS Traffic** on VM Creation.
-
-<br><img src="../images/gcege22.png" width="1381">
-
-About DNS choice, since OpenVPN will encrypt all your DNS request, your ISP can't override your DNS no matter what you choose here. The default option (Cloudflare) is good enough, use Adguard if you want additional adblocking (useful if you want to browse on browser that doesn't support adblocking like Chrome on Android), Google will be very slightly faster, but shouldn't matter much because your device will cache DNS requests anyway.
-
-Don't use compression, and unless you have special needs, you probably don't need to change the encryption setting. So just enter until you get the prompt below, and press enter.
-
-<br><img src="../images/gcege23.png" width="1709">
-
-At the near end of installation, enter the **client** profile name. Note the path shown after "the configuration file is available". You will create multiple client profile later, since the same profile can't access your VPN simultaneously. It's up to you whether to use passwordless client or not. Each profile can have different passwords.
+Note the path shown after "the configuration file is available". You will create multiple client profile later, since the same profile can't access your VPN simultaneously.
 
 <br><img src="../images/gcege24.png" width="1310">
 
-Press the Up Arrow once, the previous 
+Copy paste the following line
 
-`wget https://git.io/angristanvpn -O openvpn-install.sh && bash openvpn-install.sh`
+`bash openvpn-install.sh`
 
-should show once again. Press enter. You should be greeted with the following screen 
+then press enter. You should be greeted with the following screen 
 
 <br><img src="../images/gcege26.png" width="916">
 
