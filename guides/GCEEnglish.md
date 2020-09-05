@@ -1,3 +1,16 @@
+## SCR-related notes
+Here is the slightly modified version of the guide used to set up a VPN for Mercury 2019-2020. I seem to remember that I didn't have any issues with this guide, but since I am putting this together several months after I actually used it, there may be something that doesn't completely work. It is also possible that Google changed something since then so things may look different. This has also not been tested at a Mercury competition, but it worked on OU campus. The original guide can be [found here](https://github.com/neneeen/own-vpn-for-everyone).
+#### Why use a VPN for Mercury?
+The VPN is used to simplify communication with the robot. Instead of having to connect your laptop or whatever device directly to the robot, both you and the robot can connect to the VPN. Once you are both connected to the VPN, it is as if you are both connected to the same LAN. 
+#### How to use a VPN for Mercury?
+1. Setup a OpenVPN server (this guide shows you how to do it with Google Cloud)
+2. Add the robot and your device as users on the VPN server (as described in this guide)
+3. Download the corresponding client files to the robot and your device (also somewhat described in this guide)
+3. Install the [OpenVPN client](https://openvpn.net/download-open-vpn/) on the robot and your device
+4. Configure the robot to automatically connect to the VPN server on startup
+5. Connect your device to the VPN
+6. You should now be able to communicate with the robot at 10.0.0.2 or 10.0.0.3 or something similar (this ip should stay the same)
+
 ## Requirements
 
 * A Google accounts
@@ -93,7 +106,9 @@ A new window will be opened. Type `sudo su` and press **Enter**
 
 Copy and paste the following line (to paste, click on the prompt, then Ctrl-V), then press Enter
 
-`wget git.io/nenengce -O nenengce.sh && chmod +x nenengce.sh && ./nenengce.sh`
+`wget git.io/JUsFy -O vpn-setup.sh && chmod +x vpn-setup.sh && ./vpn-setup.sh`
+
+**SCR Note:** If you have problems getting the VPN server to work, you may have to change some of the parameters in the installation script that this downloads and reinstall the VPN server. See [this link](https://github.com/angristan/openvpn-install) for more info about the installation script. Possible fixes include changing `PROTOCOL_CHOICE=1` to `PROTOCOL_CHOICE=2` (changing from UDP to TCP) or changing `PORT=443` to `PORT=1193`.
 
 Note the path shown after "the configuration file is available". You will create multiple client profile later, since the same profile can't access your VPN simultaneously.
 
